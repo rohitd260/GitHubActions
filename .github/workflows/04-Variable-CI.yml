@@ -7,8 +7,8 @@ run-name: "[Workflow-5] ${{ github.actor }} developing the Variable usage in Git
 on:
   push:
     paths:
-      - "04-Variables-CI-Workflow/**"
-      - ".github/workflows/04.Variable.CI.yml"
+      - "04-Variables-CI-Workflow/*"
+      - ".github/workflows/04-Variable-CI.yml"
 
 env:
   NODE_VERSION_REQUIRED: "18"
