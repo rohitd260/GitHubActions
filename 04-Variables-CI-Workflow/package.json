@@ -1,4 +1,7 @@
 {
     "name" :"GitHub Acitons with the Variables Definiton and Usage",
-    "" : ""
+    "version" : "1.0.0",
+    "scripts": {
+        "info" : "node info.js"
+    }
 }
