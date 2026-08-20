@@ -1,6 +1,6 @@
 # GitHub Actions with the Variable used and the Demonstartion
 
-name : "[Workflow-5 ] Variable Usage Demonstartion Workflow"
+name : "[Workflow-5] Variable Usage Demonstartion Workflow"
 run-name : "[Workflow-5] ${{github.actor}} developing the Variable usage in the GitHub Actions"
 
 on : 
@@ -10,9 +10,9 @@ on :
       - ".github/workflows/04.Variable.CI.yml"
 
 env : 
-  NODE_VERSION_REQUIRED = '18'
-  APP_NAME = "GitHub Actions Variable Demo App"
-  ENVIRONMENT = 'Development'
+  NODE_VERSION_REQUIRED : '18'
+  APP_NAME : "GitHub Actions Variable Demo App"
+  ENVIRONMENT : 'Development'
 
 jobs :
   name : Env varibale Access Stage
