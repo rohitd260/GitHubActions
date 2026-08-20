@@ -1,0 +1,60 @@
+# GitHub Actions: Multiple CI Job file YAML configuration
+
+name: "[Workflow-2] Multiple Job Configuration"
+
+run-name: "[Workflow-2] ${{ github.actor }} have configured the Build, Test, Deploy with Multiple Job Configurations"
+
+on:
+  push:
+    paths:
+      - "02-Multiple-Job-CI-Workflow/*"
+      - ".github/workflows/02-Multiple-Job-CI.yml"
+
+jobs:
+
+  test:
+    name: Node App Test Runner
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - run: echo "Node JS Test running!!!"
+      - run: cd 02-Multiple-Job-CI-Workflow && npm install
+      - run: cd 02-Multiple-Job-CI-Workflow && npm test
+
+
+  build:
+    name: Node JS App Build Runner
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - run: echo "Node JS App Build Started!!"
+      - run: cd 02-Multiple-Job-CI-Workflow && npm install
+      - run: cd 02-Multiple-Job-CI-Workflow && npm run build
+
+
+  deploy:
+    name: Node JS App Build Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - run: echo "Node JS App Build Deployment!!"
+      - run: cd 02-Multiple-Job-CI-Workflow && npm install
+      - run: cd 02-Multiple-Job-CI-Workflow && npm run deploy

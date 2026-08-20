@@ -1,0 +1,23 @@
+name: "[Workflow-1] Node-CI Workflows Development"
+
+run-name: "[Workflow-1] ${{ github.actor }} Developing the Node CI Development Workflows"
+
+on:
+  push:
+    paths:
+      - "01-Node-CI-Workflow/**"
+      - ".github/workflows/01-Node-CI.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "18"
+
+      - run: cd 01-Node-CI-Workflow && npm install
+      - run: cd 01-Node-CI-Workflow && npm test

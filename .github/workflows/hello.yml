@@ -1,0 +1,11 @@
+name : "[Initial-Workflow] First GitHub Workflow Repo"
+run-name : "[Initial-Workflow] First Workflow with 'Hello World'"
+on : 
+  push : 
+  
+jobs : 
+  hello-job :
+    runs-on : ubuntu-latest
+    steps : 
+      - name : Say Hello via GitHub Actions
+        run : echo "Hello World ,This is GitHub actions Workflow!!" 
