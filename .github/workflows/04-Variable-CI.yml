@@ -11,7 +11,7 @@ on:
       - ".github/workflows/04-Variable-CI.yml"
 
 env:
-  NODE_VERSION_REQUIRED: "18"
+  NODE_VERSION_REQUIRED: "24"
   APP_NAME: "GitHub Actions Variable Demo App"
   ENVIRONMENT: "Development"
 
